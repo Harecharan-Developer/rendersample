@@ -8,7 +8,7 @@ app = FastAPI()
 async def read_root():
     return {"message": "Hello, FastAPI!"}
 
-@app.post("/")
-async def read_community_fisherman_data():
-    return process.read_community_fisherman_data()
+# @app.post("/")
+# async def read_community_fisherman_data():
+#     return process.read_community_fisherman_data()
 
