@@ -1,6 +1,2 @@
 fastapi
 uvicorn
-numpy
-pandas
-random 
-datetime
