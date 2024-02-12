@@ -22,8 +22,8 @@ def read_community_fisherman_data():
 
     # Sort fishermen based on the difference (priority to the most difference)
     fishermen.sort(key=lambda x: x[3], reverse=True)
-    print("Fishermen:")
-    print(fishermen)
+    # print("Fishermen:")
+    # print(fishermen)
 
     # Read fish_data CSV file
     fish_data = pd.read_csv('fish_data.csv')
@@ -31,10 +31,10 @@ def read_community_fisherman_data():
     # Find fishes that match the current season
     current_date = datetime.strptime(last_column_name, '%m/%d/%Y')
     next_week_date = current_date + timedelta(days=7)
-    print("Next week date:")
-    print(next_week_date)
-    print("Current date:")
-    print(current_date)
+    # print("Next week date:")
+    # print(next_week_date)
+    # print("Current date:")
+    # print(current_date)
 
     # Determine the current season
     if current_date.month in [3, 4, 5]:
@@ -48,12 +48,12 @@ def read_community_fisherman_data():
 
     # Filter fish data for the current season
     current_season_fish = fish_data[fish_data['viable_season'] == current_season]
-    print('Current season fish:')
-    print(current_season_fish)
+    # print('Current season fish:')
+    # print(current_season_fish)
 
     # Select fishes present in the current season
     selected_fish = current_season_fish['name_of_fish'].tolist()
-    print("Selected fish:", selected_fish)
+    # print("Selected fish:", selected_fish)
 
     allocated_fish = []
 
@@ -76,12 +76,12 @@ def read_community_fisherman_data():
     # Write updated community_fisherman_data to CSV file
     community_fisherman_data.to_csv('community_fisherman_data.csv', index=False)
 
-    print("Scheduling completed, and data written to community_fisherman_data.csv.")
+    # print("Scheduling completed, and data written to community_fisherman_data.csv.")
 
     # Return allocated fish data as JSON
     return json.dumps(allocated_fish)
 
 # Example usage:
-allocated_fish_json = read_community_fisherman_data()
-print("Allocated Fish (JSON):")
-print(allocated_fish_json)
+# allocated_fish_json = read_community_fisherman_data()
+# print("Allocated Fish (JSON):")
+# print(allocated_fish_json)
